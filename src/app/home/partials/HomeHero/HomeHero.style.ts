@@ -4,10 +4,6 @@
  * Description:
  * This file defines the styled components for the HomeHero component, which is the main visual element on the homepage.
  * It includes styles for the container, background, content, image wrappers, titles, subtitles, and button wrappers.
- *
- * Usage:
- * These styled components are used within the HomeHero component to apply consistent and thematic styling to its various elements.
- * The styles are designed to create a visually engaging hero section that captures the user's attention.
  */
 
 import styled from 'styled-components';

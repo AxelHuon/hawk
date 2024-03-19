@@ -11,11 +11,6 @@
  *    unique stylistic touch. Suitable for gaming-related content or sections needing a strong visual impact.
  * 2. 'mont-blanc-400': A regular weight font primarily used for body text, providing good readability and 
  *    a professional appearance. It's versatile and suitable for paragraphs, descriptions, and general text.
- *
- * Usage:
- * To utilize these custom fonts in your application, ensure this CSS file is correctly imported into your 
- * project's main stylesheet or linked in your HTML/JSX files. Specify the 'font-family' property in your 
- * CSS or styled components to apply the desired font to text elements.
  */
 
 @font-face {

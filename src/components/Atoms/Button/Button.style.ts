@@ -10,10 +10,6 @@
  * StyledButtonProps:
  * - `theme`: Determines the button's visual theme. This can be either 'primary' or 'secondary',
  *    affecting the button's background color and text color.
- *
- * Usage:
- * Import the StyledButton into your component to use it as a styled button element. The `theme` prop
- * controls the button's appearance, allowing for customization while maintaining consistency in design.
  */
 
 import styled, { css } from 'styled-components';

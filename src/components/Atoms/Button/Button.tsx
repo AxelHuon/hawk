@@ -10,11 +10,6 @@
  * - `theme`: Optional. Determines the button's theme. Accepts 'primary' or 'secondary'. Defaults to 'primary'.
  * - `onClick`: Optional. A callback function that is called when the button is clicked.
  * - `children`: The content to be displayed inside the button. Can be text, icons, or any React node.
- *
- * Usage:
- * This component can be used wherever a button is needed within the application. The theming capability
- * allows it to fit different design contexts by simply passing the appropriate theme prop. The onClick
- * handler can be used to specify the button's functionality when interacted with by the user.
  */
 
 'use client';

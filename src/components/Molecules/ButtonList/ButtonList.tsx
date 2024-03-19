@@ -11,12 +11,6 @@
  * - `buttons`: An array of objects, where each object represents a button to be rendered. Each object
  *   includes a `label` for the button's visible text and an optional `theme` that can be 'primary' or
  *   'secondary' to specify the button's styling.
- *
- * Usage:
- * This component can be utilized wherever a collection of actions or navigational links is required.
- * By providing an array of button configurations, ButtonList simplifies the process of rendering
- * multiple buttons with varied functionalities or appearances.
- *
  */
 
 'use client';

@@ -11,10 +11,6 @@
  * Props:
  * The Navbar component does not currently accept any props. It is designed for simplicity and ease of use,
  * with predefined navigation links and a logo image.
- *
- * Usage:
- * To integrate the Navbar into your application, simply import it and include it in your component structure,
- * typically at the top of your page layout or within your application's shell component.
  */
 
 'use client';

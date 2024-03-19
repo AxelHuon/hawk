@@ -1,7 +1,7 @@
 /*
  * NavLink Component
  * -----------------
- * Usage:
+ * Description:
  * This component is used for navigation links within the application.
  * It renders a styled link primarily used in the HomeHero section.
  *

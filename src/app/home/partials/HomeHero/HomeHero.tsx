@@ -6,10 +6,6 @@
  * a title, a subtitle, and a list of buttons for user actions. The HomeHero component is designed to
  * capture the user's attention and direct them to key actions like starting a new game or joining an existing one.
  *
- * Usage:
- * This component is intended to be used on the homepage as the primary visual element. It utilizes the
- * ButtonList component to render action buttons and the Image component from 'next/image' for optimized images.
- *
  * Structure:
  * - HomeHeroContainer: The outer container that encapsulates the hero section.
  * - HomeHeroBackground: A background image layer.

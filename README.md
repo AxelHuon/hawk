@@ -5,7 +5,6 @@ Explore contemporary role-playing narratives inspired by real-time news with Haw
 # 2. Prerequisites
 
 `Node.js [20.11.1]`<br>
-`yarn`
 
 # 3. Installation
 
@@ -33,7 +32,7 @@ Here is a general overview all inside of `src`:<br>
 - - **Atomic Design:**
     - `Atoms`: The smallest, basic building blocks of the application, such as buttons, input fields, or any other standalone UI elements.
     - `Molecules`: Groups of atoms bonded together to represent slightly more complex UI components, like a search box combining a text input atom with a button atom.
-    - `Organisms`: Complex UI components consisting of groups of molecules and possibly atoms as well. Examples include entire sections of a page like a header.<br>
+    - `Organisms`: Complex UI components consisting of groups of molecules and possibly atoms as well. Examples include entire sections of a page like a header.
 
   <br>Also put the style in `styled-components` inside a file like `component-name.style.ts`
 

@@ -23,7 +23,6 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import ButtonList from '../../../../components/Molecules/ButtonList/ButtonList';
 import {
   HomeHeroContainer,
   HomeHeroBackground,
@@ -35,6 +34,7 @@ import {
   HomeHeroSplatterWrapper,
 } from './HomeHero.style';
 
+import ButtonLink from '../../../../components/Atoms/Buttons/ButtonLink/ButtonLink';
 interface HomeHeroProps {}
 
 const HomeHero: React.FC<HomeHeroProps> = () => {
@@ -57,12 +57,8 @@ const HomeHero: React.FC<HomeHeroProps> = () => {
           est sorte flammis enim se iussurum flammis ferro.
         </HomeHeroSubtitle>
         <HomeHeroButtons>
-          <ButtonList
-            buttons={[
-              { label: 'Play', theme: 'primary' },
-              { label: 'Join a game', theme: 'secondary' },
-            ]}
-          />
+          <ButtonLink theme="primary">Play</ButtonLink>
+          <ButtonLink theme="secondary">Join Game</ButtonLink>
         </HomeHeroButtons>
       </HomeHeroContent>
     </HomeHeroContainer>

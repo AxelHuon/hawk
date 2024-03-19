@@ -107,4 +107,8 @@ export const HomeHeroSubtitle = styled.p`
 
 export const HomeHeroButtons = styled.div`
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 `;

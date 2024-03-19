@@ -13,12 +13,9 @@
  */
 
 import styled, { css } from 'styled-components';
+import { themeType } from '../Button.t';
 
-interface StyledButtonProps {
-  theme: 'primary' | 'secondary';
-}
-
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButton = styled.a<{ theme: themeType }>`
   padding: 10px;
   cursor: pointer;
   border: none;

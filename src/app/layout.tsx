@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Hawk is a espion game support.',
 };
 
-import Navbar from '../components/Organisms/Navbar/NavBar';
+import Navbar from '../components/Organisms/NavBar/NavBar';
 
 export default function RootLayout({
   children,

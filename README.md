@@ -38,11 +38,10 @@ Here is a general overview all inside of `src`:<br>
   <br>Also put the style in `styled-components` inside a file like `component-name.style.ts`
 
   Exemple of a Button component : <br><br>
-  ├── components
-  │ ├── Atomes
-  │ │ └── Button
-  │ │ └── Button.tsx
-  └── Button.style.tsx
+  ├─ components/
+  │ ├─ Atomes/
+  │ │ ├─ Button/
+  │ │ │ ├─ Button.tsx # Composant bouton réutilisable
 
 - `public/`: For static files such as images.
 

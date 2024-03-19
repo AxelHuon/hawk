@@ -8,6 +8,11 @@ import { useState } from 'react';
  * logged-in user.
  */
 
+interface handleLoginProps {
+  email: string;
+  password: string;
+}
+
 interface useAuthProps {
   handleLogin: (userParams: handleLoginProps) => void;
   error: string | null;

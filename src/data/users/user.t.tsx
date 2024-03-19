@@ -3,5 +3,5 @@ interface User {
   email: string;
   username: string;
   password: string;
-  role: 'Admin' | 'Users' | 'MJ';
+  role: 'admin' | 'user';
 }

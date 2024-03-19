@@ -13,6 +13,14 @@ Explore contemporary role-playing narratives inspired by real-time news with Haw
 git clone https://github.com/AxelHuon/hawk
 ```
 
+```bash
+cd hawk
+```
+
+```bash
+npm i
+```
+
 # 4. Structure
 
 Project Structure

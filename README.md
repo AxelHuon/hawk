@@ -38,7 +38,7 @@ Here is a general overview all inside of `src`:<br>
   <br>Also put the style in `styled-components` inside a file like `component-name.style.ts`
 
   Exemple of a Button component : <br><br>
-  `/src/components/Atomes/Button/Button.tsx`
+  `/src/components/Atomes/Button/Button.tsx`<br>
   `/src/components/Atomes/Button/Button.style.tsx`
 
 - `public/`: For static files such as images.

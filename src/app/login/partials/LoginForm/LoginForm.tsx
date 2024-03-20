@@ -24,6 +24,7 @@ import {
   LoginFormForm,
   LoginFormInputWrapper,
   LoginFormInput,
+  LoginFormInputsWrapper,
 } from './LoginForm.style';
 import ButtonLink from '../../../../components/Atoms/Buttons/ButtonLink/ButtonLink';
 
@@ -60,22 +61,24 @@ const LoginForm: React.FC = () => {
       <LoginFormForm onSubmit={handleSubmit}>
         <h2>Welcome back agent</h2>
 
-        <LoginFormInputWrapper>
-          <label htmlFor="username">Username</label>
-          <LoginFormInput
-            type="text"
-            name="username"
-            onChange={(e) => setFormLogin({ ...formLogin, email: e.target.value })}
-          />
-        </LoginFormInputWrapper>
-        <LoginFormInputWrapper>
-          <label htmlFor="password">Password</label>
-          <LoginFormInput
-            type="password"
-            name="password"
-            onChange={(e) => setFormLogin({ ...formLogin, password: e.target.value })}
-          />
-        </LoginFormInputWrapper>
+        <LoginFormInputsWrapper>
+          <LoginFormInputWrapper>
+            <label htmlFor="email">Email</label>
+            <LoginFormInput
+              type="email"
+              name="email"
+              onChange={(e) => setFormLogin({ ...formLogin, email: e.target.value })}
+            />
+          </LoginFormInputWrapper>
+          <LoginFormInputWrapper>
+            <label htmlFor="password">Password</label>
+            <LoginFormInput
+              type="password"
+              name="password"
+              onChange={(e) => setFormLogin({ ...formLogin, password: e.target.value })}
+            />
+          </LoginFormInputWrapper>
+        </LoginFormInputsWrapper>
         <ButtonLink theme="primary" href="/login" type="submit">
           Login
         </ButtonLink>

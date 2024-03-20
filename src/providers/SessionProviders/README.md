@@ -4,22 +4,22 @@ This guide provides an overview and example usage of our user session management
 
 ## Setup
 
-First, ensure that you have implemented the `SessionProvider`, `SessionContext`, and `useSession` hook as outlined in the provided TypeScript code.
+First, ensure that you have implemented the `SessionContext`, `SessionContext`, and `useSession` hook as outlined in the provided TypeScript code.
 
-### SessionProvider
+### SessionContext
 
-Wrap your application's root component with `SessionProvider` to ensure that the user session state is accessible throughout your application.
+Wrap your application's root component with `SessionContext` to ensure that the user session state is accessible throughout your application.
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'; // Your main App component
-import { SessionProvider } from './SessionContext'; // Import SessionProvider
+import { SessionContext } from './SessionContext'; // Import SessionContext
 
 ReactDOM.render(
-  <SessionProvider>
+  <SessionContext>
     <App />
-  </SessionProvider>,
+  </SessionContext>,
   document.getElementById('root'),
 );
 ```

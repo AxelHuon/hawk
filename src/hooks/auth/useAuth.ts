@@ -21,8 +21,10 @@ interface useAuthProps {
 }
 
 export const useAuth = (): useAuthProps => {
+  /*Import setUser dispatch function from useSession to setUser found in handleLogin or clear current user logged in handleLogout*/
   const { setUser } = useSession();
   const [error, setError] = useState<string | null>(null);
+
   // The `handleLogin` function asynchronously validates user credentials against a mock data file.
   // Upon successful validation, it stores the user data in local storage and updates the state.
   // In case of failure, it sets an error message.a
@@ -35,6 +37,7 @@ export const useAuth = (): useAuthProps => {
       console.log('login');
       setError(null);
       localStorage.setItem('userData', JSON.stringify(userFound));
+      setUser(userFound);
       return;
     } else {
       setError("L'email ou le mot de passe n'est pas bon");

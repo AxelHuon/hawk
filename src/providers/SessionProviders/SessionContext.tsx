@@ -1,6 +1,6 @@
-// This file defines a React context (`SessionContext`) and two components (`SessionProvider` and `useSession`)
+// This file defines a React context (`SessionProviders`) and two components (`SessionProvider` and `useSession`)
 // for managing and providing access to the user session state within a React application.
-// The `SessionContext` is used to store and access the state of the logged-in user
+// The `SessionProviders` is used to store and access the state of the logged-in user
 // (or null if no user is logged in) across the application.
 
 // `SessionProvider` is a component that wraps its children in its own
@@ -9,7 +9,7 @@
 // This component is intended to be used at the root of the application's component tree
 // to ensure that the session state is accessible everywhere.
 
-// `useSession` is a custom hook that allows components to consume the `SessionContext`
+// `useSession` is a custom hook that allows components to consume the `SessionProviders`
 // to access the user state and the `setUser` function to modify this state.
 // This hook simplifies access to the session context and ensures that the context is used
 // correctly by throwing an error if `useSession` is called outside of a `SessionProvider`,

@@ -3,7 +3,8 @@ import React from 'react';
 import './reset.css';
 import StyledComponentsRegistry from '../../lib/registry';
 import Navbar from '../components/Organisms/NavBar/NavBar';
-import { SessionProvider } from '@/contexts/SessionContext/SessionContext';
+import { SessionProvider } from '@/providers/SessionProviders/SessionContext';
+import CustomQueryClientProvider from '@/providers/CustomQueryClientProvider/CustomQueryClientProvider';
 
 export const metadata: Metadata = {
   title: 'Hawk',
@@ -16,15 +17,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <SessionProvider>
-        <StyledComponentsRegistry>
-          <body>
-            <Navbar />
-            {children}
-          </body>
-        </StyledComponentsRegistry>
-      </SessionProvider>
-    </html>
+    <CustomQueryClientProvider>
+      <html lang="fr">
+        <body>
+          <SessionProvider>
+            <StyledComponentsRegistry>
+              <Navbar />
+              {children}
+            </StyledComponentsRegistry>
+          </SessionProvider>
+        </body>
+      </html>
+    </CustomQueryClientProvider>
   );
 }

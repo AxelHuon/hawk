@@ -1,7 +1,11 @@
 export interface PostApiGameBodyRequest {
-  usersId: string;
+  userId: string;
 }
 
 export interface PostApiGameBodyResponse {
+  gameId: string;
+}
+
+export interface GetApiUniqueGame {
   gameId: string;
 }

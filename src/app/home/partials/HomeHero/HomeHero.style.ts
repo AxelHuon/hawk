@@ -11,24 +11,17 @@ import styled from 'styled-components';
 export const HomeHeroContainer = styled.div`
   overflow: hidden;
 
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-
   width: 100%;
   height: 100vh;
-`;
-
-export const HomeHeroBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -3;
 `;
 
 export const HomeHeroContent = styled.div`
@@ -53,7 +46,6 @@ export const HomeHeroImageWrapper = styled.div`
   transform: translateX(-50%) translateY(-57%);
   width: 27%;
   height: auto;
-  z-index: -1;
 
   margin: auto;
   img {

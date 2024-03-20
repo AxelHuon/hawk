@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import React from 'react';
 import './reset.css';
 import StyledComponentsRegistry from '../../lib/registry';
+import Navbar from '../components/Organisms/NavBar/NavBar';
+import { SessionProvider } from '@/contexts/SessionContext/SessionContext';
+
 export const metadata: Metadata = {
   title: 'Hawk',
   description: 'Hawk is a espion game support.',
 };
-
-import Navbar from '../components/Organisms/NavBar/NavBar';
 
 export default function RootLayout({
   children,
@@ -16,12 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <StyledComponentsRegistry>
-        <body>
-          <Navbar />
-          {children}
-        </body>
-      </StyledComponentsRegistry>
+      <SessionProvider>
+        <StyledComponentsRegistry>
+          <body>
+            <Navbar />
+            {children}
+          </body>
+        </StyledComponentsRegistry>
+      </SessionProvider>
     </html>
   );
 }

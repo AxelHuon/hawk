@@ -17,7 +17,7 @@
  */
 
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   LoginFormContainer,
@@ -27,21 +27,56 @@ import {
 } from './LoginForm.style';
 import ButtonLink from '../../../../components/Atoms/Buttons/ButtonLink/ButtonLink';
 
+import { useAuth } from '../../../../hooks/auth/useAuth';
+
+import { users } from '../../../../data/users/users';
+interface FormLoginProps {
+  email: string | null;
+  password: string | null;
+}
+
 const LoginForm: React.FC = () => {
+  const [formLogin, setFormLogin] = useState<FormLoginProps>({ email: null, password: null });
+  const { handleLogin } = useAuth();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (formLogin.email && formLogin.password) {
+      const user = users.find(
+        (user) => user.email === formLogin.email && user.password === formLogin.password,
+      );
+      if (user) {
+        handleLogin(user);
+        console.log('User logged in successfully!');
+      } else {
+        console.log('User not found');
+      }
+    }
+  };
+
   return (
     <LoginFormContainer>
-      <LoginFormForm>
+      <LoginFormForm onSubmit={handleSubmit}>
         <h2>Welcome back agent</h2>
 
         <LoginFormInputWrapper>
           <label htmlFor="username">Username</label>
-          <LoginFormInput type="text" name="username" />
+          <LoginFormInput
+            type="text"
+            name="username"
+            onChange={(e) => setFormLogin({ ...formLogin, email: e.target.value })}
+          />
         </LoginFormInputWrapper>
         <LoginFormInputWrapper>
           <label htmlFor="password">Password</label>
-          <LoginFormInput type="password" name="password" />
+          <LoginFormInput
+            type="password"
+            name="password"
+            onChange={(e) => setFormLogin({ ...formLogin, password: e.target.value })}
+          />
         </LoginFormInputWrapper>
-        <ButtonLink theme="primary" href="/login">
+        <ButtonLink theme="primary" href="/login" type="submit">
           Login
         </ButtonLink>
       </LoginFormForm>

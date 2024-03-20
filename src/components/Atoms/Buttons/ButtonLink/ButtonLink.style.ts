@@ -15,7 +15,7 @@
 import styled, { css } from 'styled-components';
 import { themeType } from '../Button.t';
 
-export const StyledButton = styled.a<{ theme: themeType }>`
+export const StyledButton = styled.button<{ theme: themeType }>`
   padding: 10px;
   cursor: pointer;
   border: none;

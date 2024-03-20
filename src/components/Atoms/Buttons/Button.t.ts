@@ -13,3 +13,5 @@
  */
 
 export type themeType = 'primary' | 'secondary';
+
+export type buttonType = 'button' | 'submit';

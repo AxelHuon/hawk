@@ -16,7 +16,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { StyledButton } from './ButtonLink.style';
-import { themeType } from '../Button.t';
+import { themeType, buttonType } from '../Button.t';
 
 type ButtonProps = {
   theme?: themeType;
@@ -24,6 +24,7 @@ type ButtonProps = {
   children: React.ReactNode;
   href?: string;
   isNextLink?: boolean;
+  type?: buttonType;
 };
 
 const ButtonLink: React.FC<ButtonProps> = ({
@@ -32,6 +33,7 @@ const ButtonLink: React.FC<ButtonProps> = ({
   children,
   href,
   isNextLink = true,
+  type = 'button',
 }) => {
   if (isNextLink && href) {
     return (

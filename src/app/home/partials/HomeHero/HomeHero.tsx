@@ -34,10 +34,12 @@ import {
 } from './HomeHero.style';
 
 import ButtonLink from '../../../../components/Atoms/Buttons/ButtonLink/ButtonLink';
+import { useSession } from '@/providers/SessionProviders/SessionContext';
 
 interface HomeHeroProps {}
 
 const HomeHero: React.FC<HomeHeroProps> = () => {
+  const { user } = useSession();
   return (
     <HomeHeroContainer>
       <HomeHeroImageWrapper>
@@ -53,7 +55,9 @@ const HomeHero: React.FC<HomeHeroProps> = () => {
           est sorte flammis enim se iussurum flammis ferro.
         </HomeHeroSubtitle>
         <HomeHeroButtons>
-          <ButtonLink theme="primary">Play</ButtonLink>
+          <ButtonLink href={user ? '/game' : '/login'} theme="primary">
+            Play
+          </ButtonLink>
           <ButtonLink theme="secondary">Join Game</ButtonLink>
         </HomeHeroButtons>
       </HomeHeroContent>

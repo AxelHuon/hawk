@@ -22,14 +22,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { StyledNavbar } from './NavBar.style';
+import { useSession } from '@/providers/SessionProviders/SessionContext';
 
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
+  const { user } = useSession();
   return (
     <StyledNavbar>
-      <NavLink href="/play" label="play" />
-
+      <NavLink href={user ? '/game' : '/login'} label="play" />
       <Link href="/" passHref>
         <Image src="/images/logo.svg" alt="logo" width={333} height={86} draggable="false" />
       </Link>

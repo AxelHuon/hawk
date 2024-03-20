@@ -3,7 +3,7 @@ import React from 'react';
 import './reset.css';
 import StyledComponentsRegistry from '../../lib/registry';
 import Navbar from '../components/Organisms/NavBar/NavBar';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { SessionProvider } from '@/contexts/SessionContext/SessionContext';
 
 export const metadata: Metadata = {
   title: 'Hawk',
@@ -15,18 +15,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const queryClient = new QueryClient();
-
   return (
     <html lang="fr">
-      <body>
-        <QueryClientProvider client={queryClient}>
-          <StyledComponentsRegistry>
+      <SessionProvider>
+        <StyledComponentsRegistry>
+          <body>
             <Navbar />
             {children}
-          </StyledComponentsRegistry>
-        </QueryClientProvider>
-      </body>
+          </body>
+        </StyledComponentsRegistry>
+      </SessionProvider>
     </html>
   );
 }

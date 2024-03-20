@@ -29,22 +29,6 @@ if (error) {
 
 If authentication fails, an error message is set, which can be accessed via the `error` state.
 
-### `getCurrentUser`
-
-This function returns the currently authenticated user's information if available. This can be useful for displaying user-specific information or for conditional rendering based on the user's authentication status.
-
-```typescript
-const { getCurrentUser } = useAuth();
-
-const currentUser = getCurrentUser();
-
-if (currentUser) {
-  console.log('Logged in as:', currentUser.email);
-} else {
-  console.log('No user is currently logged in.');
-}
-```
-
 ### `handleLogout`
 
 The `handleLogout` function is used to log out the current user. It clears the user's information from the state and removes any persisted data from local storage.

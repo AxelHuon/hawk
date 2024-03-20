@@ -20,6 +20,10 @@ cd hawk
 npm i
 ```
 
+### env
+
+Rename `.env.exemple` into env.local and change the value of `NEXT_PUBLIC_API_URL`
+
 # 4. Structure
 
 Project Structure

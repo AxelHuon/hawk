@@ -35,11 +35,11 @@ const ButtonLink: React.FC<ButtonProps> = ({
 }) => {
   if (isNextLink && href) {
     return (
-      <Link href={href} passHref>
-        <StyledButton theme={theme} onClick={onClick}>
+      <StyledButton theme={theme} onClick={onClick}>
+        <Link href={href} passHref>
           {children}
-        </StyledButton>
-      </Link>
+        </Link>
+      </StyledButton>
     );
   }
 

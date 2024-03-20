@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useSession } from '@/contexts/SessionContext/SessionContext';
+import { useSession } from '@/providers/SessionProviders/SessionContext';
 
 /* The `useAuth` hooks is designed to manage authentication state. It provides a set of functionalities
  * to handle login and logout. The hooks utilize local storage to persist user data

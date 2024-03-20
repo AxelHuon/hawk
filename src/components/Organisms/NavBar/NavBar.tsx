@@ -19,6 +19,7 @@ import React from 'react';
 
 import NavLink from '../../Atoms/Navlink/NavLink';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { StyledNavbar } from './NavBar.style';
 
@@ -27,11 +28,12 @@ interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = () => {
   return (
     <StyledNavbar>
-      <NavLink to="/play" label="play" />
+      <NavLink href="/play" label="play" />
 
-      <Image src="/images/logo.svg" alt="logo" width={333} height={86} draggable="false" />
-
-      <NavLink to="/login" label="login" />
+      <Link href="/" passHref>
+        <Image src="/images/logo.svg" alt="logo" width={333} height={86} draggable="false" />
+      </Link>
+      <NavLink href="/login" label="login" />
     </StyledNavbar>
   );
 };

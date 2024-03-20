@@ -10,20 +10,24 @@
  * - `label`: The visible text of the link.
  */
 
+/* change component for use Link from next/link */
+
 'use client';
 import React from 'react';
+
+import Link from 'next/link';
 
 import { StyledLink } from './NavLink.style';
 
 interface NavLinkProps {
-  to: string;
+  href: string;
   label: string;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ to, label }) => {
+const NavLink: React.FC<NavLinkProps> = ({ href, label }) => {
   return (
-    <StyledLink href={to} className="nav-link">
-      {label}
+    <StyledLink>
+      <Link href={href}>{label}</Link>
     </StyledLink>
   );
 };

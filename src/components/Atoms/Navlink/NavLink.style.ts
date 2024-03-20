@@ -8,14 +8,16 @@
 
 import styled from 'styled-components';
 
-export const StyledLink = styled.a`
-  color: #fff;
-  text-decoration: none;
-  padding: 1rem;
-  transition: 0.5s;
-  font-family: 'ModernWarfare', sans-serif;
+export const StyledLink = styled.div`
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    transition: 0.5s;
+    font-family: 'ModernWarfare', sans-serif;
 
-  &:hover {
-    color: #000;
+    &:hover {
+      color: #000;
+    }
   }
 `;

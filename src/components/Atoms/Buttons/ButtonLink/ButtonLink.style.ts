@@ -15,23 +15,34 @@
 import styled, { css } from 'styled-components';
 import { themeType } from '../Button.t';
 
-export const StyledButton = styled.a<{ theme: themeType }>`
+export const StyledButton = styled.button<{ theme: themeType }>`
   padding: 10px;
   cursor: pointer;
   border: none;
   font-family: 'ModernWarfare', sans-serif;
+  width: fit-content;
+
+  margin: 0 auto;
+
+  a {
+    text-decoration: none;
+  }
 
   ${(props) =>
     props.theme === 'primary' &&
     css`
       background-color: #760a0a;
-      color: #fff;
+      a {
+        color: #fff;
+      }
     `}
   ${(props) =>
     props.theme === 'secondary' &&
     css`
       background-color: transparent;
-      color: #fff;
+      a {
+        color: #fff;
+      }
     `}
   &:hover {
     opacity: 0.8;

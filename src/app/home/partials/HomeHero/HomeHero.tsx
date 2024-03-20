@@ -24,26 +24,22 @@
 import React from 'react';
 import Image from 'next/image';
 import {
+  HomeHeroButtons,
   HomeHeroContainer,
-  HomeHeroBackground,
   HomeHeroContent,
   HomeHeroImageWrapper,
-  HomeHeroTitle,
-  HomeHeroSubtitle,
-  HomeHeroButtons,
   HomeHeroSplatterWrapper,
+  HomeHeroSubtitle,
+  HomeHeroTitle,
 } from './HomeHero.style';
 
 import ButtonLink from '../../../../components/Atoms/Buttons/ButtonLink/ButtonLink';
+
 interface HomeHeroProps {}
 
 const HomeHero: React.FC<HomeHeroProps> = () => {
   return (
     <HomeHeroContainer>
-      <HomeHeroBackground>
-        <Image src="/images/background.png" alt="background" layout="fill" />
-      </HomeHeroBackground>
-
       <HomeHeroImageWrapper>
         <Image src="/images/agent.png" width={472} height={551} alt="agent" />
       </HomeHeroImageWrapper>

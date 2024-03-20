@@ -1,0 +1,24 @@
+/*
+ * Custom Fonts Definition
+ * -----------------------
+ * Description:
+ * This CSS file defines the @font-face rules for custom fonts used throughout the application. It includes 
+ * the 'ModernWarfare' and 'mont-blanc-400' fonts, which are applied to various textual elements within the 
+ * application to enhance its visual design and user experience.
+ *
+ * Fonts Included:
+ * 1. 'ModernWarfare': A distinctive font used for titles, headings, and any text requiring emphasis or a 
+ *    unique stylistic touch. Suitable for gaming-related content or sections needing a strong visual impact.
+ * 2. 'mont-blanc-400': A regular weight font primarily used for body text, providing good readability and 
+ *    a professional appearance. It's versatile and suitable for paragraphs, descriptions, and general text.
+ */
+
+@font-face {
+  font-family: 'ModernWarfare';
+  src: url('/public/fonts/modern-warfare/ModernWarfare-8MM6z.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'mont-blanc-400';
+  src: url('/public/fonts/mont-blanc/MontBlanc-Trial-Regular.otf') format('opentype');
+}

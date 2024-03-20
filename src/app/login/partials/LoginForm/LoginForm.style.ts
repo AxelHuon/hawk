@@ -79,3 +79,10 @@ export const LoginFormInput = styled.input`
     outline: none;
   }
 `;
+
+export const ErrorText = styled.div`
+  margin-top: 20px;
+  color: red;
+  font-family: 'mont-blanc-400', sans-serif;
+  font-size: 14px;
+`;

@@ -35,7 +35,6 @@ export const useAuth = (): useAuthProps => {
       (user) => user.email === userParams.email && user.password === userParams.password,
     );
     if (userFound) {
-      console.log('login');
       setError(null);
       localStorage.setItem('userData', JSON.stringify(userFound));
       setUser(userFound);

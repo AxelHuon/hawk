@@ -20,39 +20,30 @@
 import React, { useState } from 'react';
 
 import {
+  ErrorText,
   LoginFormContainer,
   LoginFormForm,
-  LoginFormInputWrapper,
   LoginFormInput,
   LoginFormInputsWrapper,
+  LoginFormInputWrapper,
 } from './LoginForm.style';
 import ButtonLink from '../../../../components/Atoms/Buttons/ButtonLink/ButtonLink';
 
 import { useAuth } from '../../../../hooks/auth/useAuth';
 
-import { users } from '../../../../data/users/users';
 interface FormLoginProps {
-  email: string | null;
-  password: string | null;
+  email: string;
+  password: string;
 }
 
 const LoginForm: React.FC = () => {
-  const [formLogin, setFormLogin] = useState<FormLoginProps>({ email: null, password: null });
-  const { handleLogin } = useAuth();
+  const [formLogin, setFormLogin] = useState<FormLoginProps>({ email: '', password: '' });
+  const { handleLogin, error } = useAuth();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (formLogin.email && formLogin.password) {
-      const user = users.find(
-        (user) => user.email === formLogin.email && user.password === formLogin.password,
-      );
-      if (user) {
-        handleLogin(user);
-        console.log('User logged in successfully!');
-      } else {
-        console.log('User not found');
-      }
+      handleLogin(formLogin);
     }
   };
 
@@ -60,7 +51,6 @@ const LoginForm: React.FC = () => {
     <LoginFormContainer>
       <LoginFormForm onSubmit={handleSubmit}>
         <h2>Welcome back agent</h2>
-
         <LoginFormInputsWrapper>
           <LoginFormInputWrapper>
             <label htmlFor="email">Email</label>
@@ -82,6 +72,7 @@ const LoginForm: React.FC = () => {
         <ButtonLink theme="primary" href="/login" type="submit">
           Login
         </ButtonLink>
+        {error && <ErrorText>{error}</ErrorText>}
       </LoginFormForm>
     </LoginFormContainer>
   );

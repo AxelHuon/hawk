@@ -5,11 +5,12 @@ export interface PostApiGameBodyRequest {
   userId: string;
 }
 
-/*Response of route "/create/game" */
+/*Response of route "/game/create" */
 export interface PostApiGameBodyResponse {
   gameId: string;
 }
 
+/*Interface of route "/game/getAll or /game/user/{uiid} or /game/{uiid}*/
 export interface GetApiGames {
   id: string;
   title: string | null;

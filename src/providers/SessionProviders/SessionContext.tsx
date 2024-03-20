@@ -36,13 +36,15 @@ export const SessionProvider = ({ children }: SessionProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const userData = localStorage.getItem('userData');
-    if (userData) {
-      setUser(JSON.parse(userData));
-    } else {
-      setUser(null);
+    if (!user) {
+      const userData = localStorage.getItem('userData');
+      if (userData) {
+        setUser(JSON.parse(userData));
+      } else {
+        setUser(null);
+      }
     }
-  }, []);
+  }, [user]);
 
   return <SessionContext.Provider value={{ user, setUser }}>{children}</SessionContext.Provider>;
 };

@@ -3,8 +3,8 @@ import React from 'react';
 import './reset.css';
 import StyledComponentsRegistry from '../../lib/registry';
 import Navbar from '../components/Organisms/NavBar/NavBar';
-import { SessionProvider } from '@/providers/SessionProviders/SessionContext';
 import CustomQueryClientProvider from '@/providers/CustomQueryClientProvider/CustomQueryClientProvider';
+import { SessionProvider } from '@/providers/SessionProviders/SessionContext';
 
 export const metadata: Metadata = {
   title: 'Hawk',

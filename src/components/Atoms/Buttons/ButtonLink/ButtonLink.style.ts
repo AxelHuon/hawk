@@ -22,7 +22,7 @@ export const StyledButton = styled.button<{ theme: themeType }>`
   font-family: 'ModernWarfare', sans-serif;
   width: fit-content;
 
-  margin: 0 auto;
+  color: #fff;
 
   a {
     text-decoration: none;

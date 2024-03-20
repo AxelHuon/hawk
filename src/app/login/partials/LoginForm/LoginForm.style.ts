@@ -28,11 +28,12 @@ export const LoginFormContainer = styled.div`
   height: 100vh;
 `;
 export const LoginFormForm = styled.form`
-  padding: 24px;
+  padding: 48px 84px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
   background-color: #111;
+
+  align-items: center;
 
   h2 {
     color: #fff;
@@ -41,13 +42,21 @@ export const LoginFormForm = styled.form`
   }
 `;
 
+export const LoginFormInputsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  max-width: 80%;
+  margin: 38px auto;
+`;
+
 export const LoginFormInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
   width: 100%;
-  max-width: 80%;
-  margin: 0 auto;
+
   gap: 8px;
 
   label {

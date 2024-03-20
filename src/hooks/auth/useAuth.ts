@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
+import { useSession } from '@/contexts/SessionContext/SessionContext';
 
-/* The `useAuth` hook is designed to manage authentication state. It provides a set of functionalities
- * to handle login, logout, and to retrieve the current user's information. The hook utilizes local storage to persist user data
+/* The `useAuth` hooks is designed to manage authentication state. It provides a set of functionalities
+ * to handle login and logout. The hooks utilize local storage to persist user data
  * across sessions, offering a simplified mock authentication flow. It defines an interface for its return type and for the parameters
- * it expects. The hook internally manages an error state to handle authentication errors and a current user state to keep track of the
+ * it expects. The hooks internally manages an error state to handle authentication errors and a current user state to keep track of the
  * logged-in user.
  */
 
@@ -16,17 +17,15 @@ interface handleLoginProps {
 interface useAuthProps {
   handleLogin: (userParams: handleLoginProps) => void;
   error: string | null;
-  getCurrentUser: () => User | null;
   handleLogout: () => void;
 }
 
 export const useAuth = (): useAuthProps => {
+  const { setUser } = useSession();
   const [error, setError] = useState<string | null>(null);
-  const [currentUser, setCurrentUser] = useState<User | null>();
-
   // The `handleLogin` function asynchronously validates user credentials against a mock data file.
   // Upon successful validation, it stores the user data in local storage and updates the state.
-  // In case of failure, it sets an error message.
+  // In case of failure, it sets an error message.a
   const handleLogin = async (userParams: handleLoginProps) => {
     const response = await import('@/data/users/users');
     const userFound = response.users.find(
@@ -43,32 +42,16 @@ export const useAuth = (): useAuthProps => {
     }
   };
 
-  // The `getCurrentUser` function checks if a user is already set in the state,
-  // otherwise, it attempts to retrieve the user's information from local storage.
-  // This allows the application to persist the user's logged-in state across sessions.
-  const getCurrentUser = (): User | null => {
-    if (currentUser) {
-      return currentUser;
-    } else {
-      const userData = localStorage?.getItem('userData');
-      if (userData) {
-        return JSON.parse(userData);
-      }
-    }
-    return null;
-  };
-
   // The `handleLogout` function clears the current user from the state and removes
   // the user data from local storage, effectively logging the user out.
   const handleLogout = () => {
-    setCurrentUser(null);
     localStorage.removeItem('userData');
+    setUser(null);
   };
 
   return {
     handleLogin,
     error,
-    getCurrentUser,
     handleLogout,
   };
 };
